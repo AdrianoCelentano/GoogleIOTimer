@@ -134,12 +134,6 @@ private fun DrawScope.five(path: Path) {
     drawNumber(path, turquise)
 }
 
-private val DrawScope.xStep get() = size.width / 6
-private val DrawScope.yStep get() = size.height / 12
-
-private val DrawScope.xStepInt get() = xStep.toInt()
-private val DrawScope.yStepInt get() = yStep.toInt()
-
 private fun DrawScope.drawNumber(path: Path, color: Color) {
     drawPath(
         path = path,
@@ -205,3 +199,9 @@ private val DrawScope.fiveNodes
         IntOffset(6 * xStepInt, 9 * yStepInt),
         IntOffset(0 * xStepInt, 12 * yStepInt)
     )
+
+private val DrawScope.xStep get() = size.width / 6
+private val DrawScope.yStep get() = size.height / 12
+
+private val DrawScope.xStepInt get() = xStep.toInt()
+private val DrawScope.yStepInt get() = yStep.toInt()

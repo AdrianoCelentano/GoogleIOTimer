@@ -43,8 +43,8 @@ fun PlayButton(onClick: () -> Unit) {
 
     Canvas(
         modifier = Modifier
-            .height(100.dp * 2 / 3)
-            .width(80.dp * 2 / 3)
+            .height(65.dp)
+            .width(50.dp)
             .clickable {
                 onClick()
                 coroutineScope.launch {
@@ -75,11 +75,6 @@ fun PlayButton(onClick: () -> Unit) {
         drawPath(path = path, color = color)
     }
 }
-
-private val DrawScope.xStep get() = size.width / 8
-private val DrawScope.xStepInt get() = xStep.toInt()
-private val DrawScope.yStep get() = size.height / 10
-private val DrawScope.yStepInt get() = yStep.toInt()
 
 val DrawScope.playOneNodes
     get() = listOf(
@@ -116,3 +111,8 @@ val DrawScope.pauseTwoNodes
         IntOffset(1 * xStepInt, 10 * yStepInt),
         IntOffset(1 * xStepInt, 0 * yStepInt),
     )
+
+private val DrawScope.xStep get() = size.width / 8
+private val DrawScope.xStepInt get() = xStep.toInt()
+private val DrawScope.yStep get() = size.height / 10
+private val DrawScope.yStepInt get() = yStep.toInt()
